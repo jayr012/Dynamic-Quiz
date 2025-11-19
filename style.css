@@ -1,209 +1,229 @@
-/* Import Poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Body with full-screen fixed background */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    background: url('https://i.pinimg.com/1200x/65/40/ea/6540ea3a24a3247fbcb87e18714be98a.jpg') center/cover no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: url('https://i.pinimg.com/1200x/65/40/ea/6540ea3a24a3247fbcb87e18714be98a.jpg') center/cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-/* Wrapper */
 .wrapper {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
-/* Quiz container */
 .quiz-container {
-    width: 400px;
-    max-width: 90%;
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 500px;
 }
 
-/* Glassmorphic card */
 .card {
-    background: rgba(255, 255, 255, 0.25);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.25);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-bottom: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18);
 }
 
-/* Upper card text */
-.upper-card h1,
-.upper-card p {
-    color: black;
+.card h1, .card h2, .card p {
+  color: black;
 }
 
-/* General text */
-h2,
-p {
-    color: black;
-    margin-bottom: 15px;
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
-/* Buttons */
+.quiz-header .question-mark {
+  font-size: 30px;
+  font-weight: bold;
+  color: #740D78; /* Purple color for the ? */
+}
+
+.quiz-header .quiz-info {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.quiz-header .quiz-info span {
+  font-weight: 400;
+  color: #555;
+}
+
+/* Styling for the answer choices */
+#answer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#answer-buttons .btn {
+  background-color: rgba(255,255,255,0.8);
+  text-align: left;
+  border: 2px solid transparent;
+  color: black;
+  outline: none;
+  font-size: 14px; /* Smaller font size for answer choices */
+  padding: 15px 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#answer-buttons .btn:hover,
+#answer-buttons .btn:focus,
+#answer-buttons .btn.selected {
+  outline: 3px solid #740D78;
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Button Styling */
 .btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    background-color: rgba(255, 255, 255, 0.3);
-    color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  background-color: #007BFF;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255,255,255,0.5);
 }
 
-/* Next button wrapper */
 .next-btn-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
 }
 
-/* Next button */
 .next-btn {
-    display: none;
-    background-color: #008CBA;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-/* Answer button layout */
-#answer-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
+.next-btn:hover {
+  background-color: #006f98;
 }
 
-/* Answer button styling */
-#answer-buttons .btn {
-    color: #222;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid transparent;
-    text-align: left;
-}
-
-/* Violet outline when selecting */
-#answer-buttons .btn.selected {
-    outline: 3px solid #740D78;
-}
-
-/* Correct / wrong outline */
-.correct { border-color: #4CAF50; }
-.wrong { border-color: #f44336; }
-
-/* Progress bar container */
-.progress-container {
-    margin-bottom: 20px;
-}
-
-/* Progress bar background */
-.progress-bar {
-    width: 100%;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-/* Progress bar fill */
-.progress-fill {
-    width: 0%;
-    height: 100%;
-    background-color: #4CAF50;
-    transition: width 0.3s;
-}
-
-/* Trophy */
-.trophy {
-    font-size: 50px;
-    margin-bottom: 15px;
-}
-
-/* Incorrect review container */
-#review-incorrect {
-    margin-top: 20px;
-    text-align: left;
-}
-
-/* Incorrect list */
 #incorrect-list {
-    list-style: none;
-    padding-left: 0;
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
 }
 
-/* Outer incorrect block */
 #incorrect-list li {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.25);
-    border-left: 4px solid #f44336;
-    border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-left: 4px solid #f44336;
+  border-radius: 8px;
 }
 
-/* Question line */
 #incorrect-list .question {
-    font-weight: bold;
-    font-size: 15px;
-    margin-bottom: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* INNER CARDS (white) */
-.answer-card {
-    background-color: white;
-    padding: 12px 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+#incorrect-list .answer-card {
+  background-color: #ffffff;
+  color: black;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Your Answer card */
-.your-answer-card {
-    border-left: 4px solid #f44336;
-    color: #f44336;
+#incorrect-list .your-answer-card {
+  border-left: 4px solid #f44336;
+  color: #f44336;
+  background-color: #ffe6e6;
 }
 
-/* Correct Answer card */
-.correct-answer-card {
-    border-left: 4px solid #4CAF50;
-    color: #4CAF50;
+#incorrect-list .correct-answer-card {
+  border-left: 4px solid #4CAF50;
+  color: #4CAF50;
+  background-color: #e6ffe6;
 }
 
-/* Coverage */
-.coverage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    color: #fff;
+.hover-shake {
+  animation: hoverShake 0.4s ease-in-out;
 }
 
-/* Restart button */
-#restart-btn {
-    margin-top: 20px;
-    background-color: #008CBA;
-    color: white;
+@keyframes hoverShake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.click-shake {
+  animation: clickShake 0.35s ease-in-out;
+}
+
+@keyframes clickShake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#progress-fill {
+  width: 0%; /* Initial width is 0% */
+  height: 100%;
+  background-color: #007BFF; /* Blue color for the progress */
+  border-radius: 5px;
 }
