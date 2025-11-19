@@ -1,68 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Quiz App</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Quiz App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="wrapper">
-        <div class="quiz-container">
+  <div class="wrapper">
+    <div class="quiz-container">
 
-            <!-- Upper Heading Card -->
-            <div class="upper-card card">
-                <h1>JavaScript Basic Quiz</h1>
-                <p>Test your knowledge in JavaScript</p>
-            </div>
+      <div class="upper-card card">
+        <h1>JavaScript Basic Quiz</h1>
+        <p>Test your knowledge in JavaScript along with the HTML and CSS</p>
+      </div>
 
-            <!-- Home Page Card -->
-            <div id="home-card" class="card">
-                <h2>Welcome to JavaScript Quiz</h2>
-                <p>Test your knowledge of HTML, CSS, and JavaScript in this interactive quiz. Are you ready to challenge yourself?</p>
-                <div class="coverage">
-                    <span class="coverage-icon">❓</span>
-                    <p>10 Questions | Multiple Choice</p>
-                </div>
-                <button id="start-btn" class="btn">Start Quiz</button>
-            </div>
-
-            <!-- Quiz Card -->
-            <div id="quiz-card" class="card" style="display: none;">
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-                </div>
-                <p id="question"></p>
-                <div id="answer-buttons" class="btn-container"></div>
-                <div class="next-btn-wrapper">
-                    <button id="next-btn" class="btn next-btn">Next</button>
-                </div>
-            </div>
-
-            <!-- Result Card -->
-            <div id="result-card" class="card" style="display: none;">
-                <div class="trophy">🏆</div>
-                <h2>Quiz Completed!</h2>
-                <p id="final-score"></p>
-                <p id="correct-answers"></p>
-                <p id="incorrect-answers"></p>
-                <p id="success-rate"></p>
-                <div id="review-incorrect">
-                    <h3>Review Incorrect Answers:</h3>
-                    <ul id="incorrect-list"></ul>
-                </div>
-                <button id="restart-btn" class="btn">Restart Quiz</button>
-            </div>
-
+      <div id="home-card" class="card">
+        <h2>Welcome to JavaScript Quiz</h2>
+        <p>Test your knowledge of HTML, CSS, and JavaScript in this interactive quiz.</p>
+        <p>Are you ready?</p>
+        <div class="coverage">
+          <span class="coverage-icon">❓</span>
+          <p>15 Questions | Multiple Choice</p>
         </div>
-    </div>
+        <button id="start-btn" class="btn">Start Quiz</button>
+      </div>
 
-    <script src="script.js"></script>
+      <div id="quiz-card" class="card" style="display: none;">
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+        <p id="question"></p>
+        <div id="answer-buttons" class="btn-container"></div>
+        <div class="next-btn-wrapper">
+          <button id="next-btn" class="btn next-btn">Next</button>
+        </div>
+      </div>
+
+      <div id="result-card" class="card" style="display: none;">
+        <div class="trophy">🏆</div>
+        <h2>Quiz Completed!</h2>
+        <p id="final-score"></p>
+        <p id="correct-answers"></p>
+        <p id="incorrect-answers"></p>
+        <p id="success-rate"></p>
+
+        <div id="review-incorrect">
+          <h3>Review Incorrect Answers:</h3>
+          <ul id="incorrect-list"></ul>
+        </div>
+
+        <button id="restart-btn" class="btn">Restart Quiz</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
