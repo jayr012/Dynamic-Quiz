@@ -19,141 +19,141 @@ $(document).ready(function () {
   let incorrectQuestions = [];
 
 const quizData = [
-  {
-    question: "What is the correct syntax for an external script 'app.js'?",
-    answers: [
-      { text: "<script src='app.js'></script>", correct: true },
-      { text: "<script href='app.js'></script>", correct: false },
-      { text: "<script name='app.js'></script>", correct: false },
-      { text: "<script file='app.js'></script>", correct: false }
-    ]
-  },
-  {
-    question: "Which property is used to change the background color in CSS?",
-    answers: [
-      { text: "background-color", correct: true },
-      { text: "bgcolor", correct: false },
-      { text: "color", correct: false },
-      { text: "background", correct: false }
-    ]
-  },
-  {
-    question: "Which JavaScript method is used to select an element by ID?",
-    answers: [
-      { text: "getElementById()", correct: true },
-      { text: "querySelectorAll()", correct: false },
-      { text: "getElementsByClassName()", correct: false },
-      { text: "getElement()", correct: false }
-    ]
-  },
-  {
-    question: "Which operator is used for strict equality in JS?",
-    answers: [
-      { text: "===", correct: true },
-      { text: "==", correct: false },
-      { text: "=", correct: false },
-      { text: "!==", correct: false }
-    ]
-  },
-  {
-    question: "Which tag is used to define a table row in HTML?",
-    answers: [
-      { text: "<tr>", correct: true },
-      { text: "<td>", correct: false },
-      { text: "<th>", correct: false },
-      { text: "<table>", correct: false }
-    ]
-  },
-  {
-    question: "What does CSS stand for?",
-    answers: [
-      { text: "Cascading Style Sheets", correct: true },
-      { text: "Computer Style Sheets", correct: false },
-      { text: "Creative Style Syntax", correct: false },
-      { text: "Colorful Style Sheet", correct: false }
-    ]
-  },
-  {
-    question: "Which HTML attribute specifies an alternate text for an image?",
-    answers: [
-      { text: "alt", correct: true },
-      { text: "src", correct: false },
-      { text: "title", correct: false },
-      { text: "longdesc", correct: false }
-    ]
-  },
-  {
-    question: "Which symbol is used for ID selectors in CSS?",
-    answers: [
-      { text: "#", correct: true },
-      { text: ".", correct: false },
-      { text: "*", correct: false },
-      { text: "$", correct: false }
-    ]
-  },
-  {
-    question: "Which HTML tag is used to define an unordered list?",
-    answers: [
-      { text: "<ul>", correct: true },
-      { text: "<ol>", correct: false },
-      { text: "<li>", correct: false },
-      { text: "<list>", correct: false }
-    ]
-  },
-  {
-    question: "Which JavaScript keyword is used to declare a variable?",
-    answers: [
-      { text: "let", correct: true },
-      { text: "various", correct: false },
-      { text: "int", correct: false },
-      { text: "set", correct: false }
-    ]
-  },
-  {
-    question: "Which property is used to change the font of text in CSS?",
-    answers: [
-      { text: "font-family", correct: true },
-      { text: "text-font", correct: false },
-      { text: "font-style", correct: false },
-      { text: "font-weight", correct: false }
-    ]
-  },
-  {
-    question: "Which HTML element defines the title of a document?",
-    answers: [
-      { text: "<title>", correct: true },
-      { text: "<head>", correct: false },
-      { text: "<meta>", correct: false },
-      { text: "<header>", correct: false }
-    ]
-  },
-  {
-    question: "Which method is used to add an element at the end of an array in JavaScript?",
-    answers: [
-      { text: "push()", correct: true },
-      { text: "pop()", correct: false },
-      { text: "shift()", correct: false },
-      { text: "unshift()", correct: false }
-    ]
-  },
-  {
-    question: "Which CSS property controls the text size?",
-    answers: [
-      { text: "font-size", correct: true },
-      { text: "text-style", correct: false },
-      { text: "text-size", correct: false },
-      { text: "font-style", correct: false }
-    ]
-  },
-  {
-    question: "Which HTML attribute is used to define inline styles?",
-    answers: [
-      { text: "style", correct: true },
-      { text: "class", correct: false },
-      { text: "font", correct: false },
-      { text: "styles", correct: false }
-    ]
-  }
+{
+  question: "Which keyword declares a block-scoped variable in JavaScript?",
+  answers: [
+    { text: "let", correct: true },
+    { text: "var", correct: false },
+    { text: "const", correct: false },
+    { text: "define", correct: false }
+  ]
+},
+{
+  question: "What symbol is used for jQuery selectors?",
+  answers: [
+    { text: "$", correct: true },
+    { text: "@", correct: false },
+    { text: "#", correct: false },
+    { text: "&", correct: false }
+  ]
+},
+{
+  question: "Which method runs code after the DOM is fully loaded in jQuery?",
+  answers: [
+    { text: "$(document).ready()", correct: true },
+    { text: "$(window).start()", correct: false },
+    { text: "$.onLoad()", correct: false },
+    { text: "$.DOMContentLoaded()", correct: false }
+  ]
+},
+{
+  question: "Which operator checks both value and type in JavaScript?",
+  answers: [
+    { text: "===", correct: true },
+    { text: "==", correct: false },
+    { text: "=", correct: false },
+    { text: "!==", correct: false }
+  ]
+},
+{
+  question: "Which jQuery method hides an element?",
+  answers: [
+    { text: ".hide()", correct: true },
+    { text: ".vanish()", correct: false },
+    { text: ".invisible()", correct: false },
+    { text: ".none()", correct: false }
+  ]
+},
+{
+  question: "What does DOM stand for?",
+  answers: [
+    { text: "Document Object Model", correct: true },
+    { text: "Data Output Method", correct: false },
+    { text: "Digital Object Management", correct: false },
+    { text: "Document Order Map", correct: false }
+  ]
+},
+{
+  question: "Which method selects an element by ID in jQuery?",
+  answers: [
+    { text: "$('#id')", correct: true },
+    { text: "$('.id')", correct: false },
+    { text: "$('id')", correct: false },
+    { text: "$('<id>')", correct: false }
+  ]
+},
+{
+  question: "Which JavaScript method outputs a message to the console?",
+  answers: [
+    { text: "console.log()", correct: true },
+    { text: "message.print()", correct: false },
+    { text: "log.console()", correct: false },
+    { text: "write.console()", correct: false }
+  ]
+},
+{
+  question: "Which jQuery method changes HTML content?",
+  answers: [
+    { text: ".html()", correct: true },
+    { text: ".changeHTML()", correct: false },
+    { text: ".textHTML()", correct: false },
+    { text: ".update()", correct: false }
+  ]
+},
+{
+  question: "Which symbol is used for comments in JavaScript?",
+  answers: [
+    { text: "// comment", correct: true },
+    { text: "-- comment", correct: false },
+    { text: "## comment", correct: false },
+    { text: "<!-- comment -->", correct: false }
+  ]
+},
+{
+  question: "Which JavaScript method converts a JSON string into an object?",
+  answers: [
+    { text: "JSON.parse()", correct: true },
+    { text: "JSON.convert()", correct: false },
+    { text: "JSON.objectify()", correct: false },
+    { text: "JSON.stringify()", correct: false }
+  ]
+},
+{
+  question: "Which jQuery method is used to add a class to an element?",
+  answers: [
+    { text: ".addClass()", correct: true },
+    { text: ".classAdd()", correct: false },
+    { text: ".appendClass()", correct: false },
+    { text: ".newClass()", correct: false }
+  ]
+},
+{
+  question: "Which JavaScript method removes the last element of an array?",
+  answers: [
+    { text: "pop()", correct: true },
+    { text: "push()", correct: false },
+    { text: "shift()", correct: false },
+    { text: "unshift()", correct: false }
+  ]
+},
+{
+  question: "Which jQuery method fades out an element?",
+  answers: [
+    { text: ".fadeOut()", correct: true },
+    { text: ".lighter()", correct: false },
+    { text: ".opacity()", correct: false },
+    { text: ".transparent()", correct: false }
+  ]
+},
+{
+  question: "Which JavaScript function is used to delay code execution?",
+  answers: [
+    { text: "setTimeout()", correct: true },
+    { text: "delay()", correct: false },
+    { text: "wait()", correct: false },
+    { text: "pause()", correct: false }
+  ]
+}
 ];
 
   function doHoverShake($el) {
